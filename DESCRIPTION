@@ -12,4 +12,6 @@ Depends:
     R (>= 2.10)
 LazyData: true
 Imports: 
-    tidyverse
+    dplyr,
+    purrr,
+    readr

@@ -4,7 +4,6 @@
 \name{reexports}
 \alias{reexports}
 \alias{\%>\%}
-\alias{fwf_widths}
 \title{Objects exported from other packages}
 \keyword{internal}
 \description{
@@ -13,7 +12,5 @@ below to see their documentation.
 
 \describe{
   \item{magrittr}{\code{\link[magrittr:pipe]{\%>\%}}}
-
-  \item{readr}{\code{\link[readr:read_fwf]{fwf_widths}}}
 }}
 

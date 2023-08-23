@@ -2,7 +2,7 @@ Package: jslutil
 Title: Utilities that jungsoo use in R environment
 Version: 0.0.0
 Authors@R: 
-    person(given = "Jungsoo", family = "Lee", role = c("aut"), email = "jslfree080@gmail.com")
+    c(person(given = "Jungsoo", family = "Lee", role = c("aut", "cre"), email = "jslfree080@gmail.com"))
 Description: Miscellaneous utilities that Jungsoo uses.
 License: MIT
 Encoding: UTF-8
@@ -18,4 +18,3 @@ Imports:
 	purrr,
 	dplyr,
 	stringr
-Maintainer: Jungsoo Lee <jslfree080@gmail.com>

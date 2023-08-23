@@ -5,6 +5,6 @@
 #' @export
 dplyr::`%>%`
 
-#' @importFrom readr %>%
+#' @importFrom readr fwf_widths
 #' @export
 readr::fwf_widths

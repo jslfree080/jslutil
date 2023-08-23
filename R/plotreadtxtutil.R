@@ -35,7 +35,7 @@ prepareRDSforplotread <- function(rdsdir, os = "macOS") {
   normal_index <- grep("N", sample_vector); normal_index <- c(normal_index, grep("neg", sample_vector))
   tumor_index <- seq_along(sample_vector)[!seq_along(sample_vector) %in% normal_index]
   normal_ref <- purrr::map( normal_index, ~ as.vector(as.vector(ess_plotread_validation_input[[.]][-c(1:3),1])==as.character(ess_plotread_validation_input[[.]][2,1])) %>% purrr::discard(., is.na) %>% mean() ) %>% unlist()
-  plotread_txt[normal_index][order(normal_ref)] %>% head(); normal_ref[order(normal_ref)] %>% head()
+  plotread_txt[normal_index][order(normal_ref)] %>% View(); normal_ref[order(normal_ref)] %>% View()
   tumor_alt <- purrr::map( tumor_index, ~ as.vector(as.vector(ess_plotread_validation_input[[.]][-c(1:3),1])!=as.character(ess_plotread_validation_input[[.]][2,1])) %>% purrr::discard(., is.na) %>% mean() ) %>% unlist()
   tumor_alt_position <- purrr::map(plotread_txt[tumor_index][order(tumor_alt)], ~ strsplit(., "[_]")[[1]][3]) %>% unlist()
   tumor_alt_position

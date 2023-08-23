@@ -2,4 +2,4 @@
 
 export("%>%")
 export(saveRDSforplotread)
-importFrom(dplyr,"%>%")
+importFrom(magrittr,"%>%")

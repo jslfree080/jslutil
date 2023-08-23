@@ -11,5 +11,10 @@ RoxygenNote: 7.2.1
 Depends: 
     R (>= 2.10)
 LazyData: true
-Imports:
-	tidyverse
+Imports: 
+	tibble,
+	tidyr,
+	readr,
+	purrr,
+	dplyr,
+	stringr

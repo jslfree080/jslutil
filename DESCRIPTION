@@ -1,0 +1,14 @@
+Package: jslutil
+Title: Utilities that jungsoo use in R environment
+Version: 0.0.0
+Authors@R: 
+    person("Jungsoo", "Lee", , "jslfree080@gmail.com", role = c("aut", "cre"),
+           comment = c(ORCID = "YOUR-ORCID-ID"))
+Description: Miscellaneous utilities that Jungsoo uses.
+License: `use_mit_license()`
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.1
+Depends: 
+    R (>= 2.10)
+LazyData: true

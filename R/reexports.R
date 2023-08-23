@@ -12,6 +12,6 @@ readr::read_fwf
 #' @export
 readr::fwf_widths
 
-#' @importFrom dplyr %>%
+#' @importFrom magrittr %>%
 #' @export
-dplyr::`%>%`
+magrittr::`%>%`

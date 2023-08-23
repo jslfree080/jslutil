@@ -4,3 +4,7 @@
 #' @importFrom readr read_fwf
 #' @export
 readr::read_fwf
+
+#' @importFrom dplyr %>%
+#' @export
+dplyr::`%>%`

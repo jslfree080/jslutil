@@ -5,13 +5,13 @@
 #' Any rows with duplicated row names will be dropped with the first one being
 #' kepted.
 #'
-#' @param infile Path to the input file
-#' @return A matrix of the infile
+#' @param txtdir path to the input text file
+#' @param rdsdir path to the output rds file
+#' @return saves rds object for plotreading test
 #' @export
-load_mat <- function(infile){
-  in.dt <- data.table::fread(infile, header = TRUE)
-  in.dt <- in.dt[!duplicated(in.dt[,1]), ]
-  in.mat <- as.matrix(in.dt[, -1, with = FALSE])
-  rownames(in.mat) <- unlist(in.dt[, 1, with = FALSE])
-  in.mat
+saveRDSforplotread <- function(txtdir, rdsdir, os = "macOS"){
+  plotread_txt <- Sys.glob("*.txt")
+  ess_plotread_validation_input <- map(seq_along(plotread_txt), ~ read_fwf(plotread_txt[.], col_positions = fwf_widths(rep(1, 90))) %>% .[,which(.[3,] == "*")])
+  osmark <- ifelse(os == "macOS", "/", "\\")
+  saveRDS(ess_plotread_validation_input, file = file.path(rdsdir, "ess_plotread_validation_input.rds", fsep = osmark))
 }

@@ -4,3 +4,7 @@
 #' @importFrom magrittr %>%
 #' @export
 magrittr::`%>%`
+
+#' @importFrom readr %>%
+#' @export
+readr::fwf_widths

@@ -4,7 +4,7 @@
 \name{reexports}
 \alias{reexports}
 \alias{\%>\%}
-\alias{fwf_widths}
+\alias{read_fwf}
 \title{Objects exported from other packages}
 \keyword{internal}
 \description{
@@ -14,6 +14,6 @@ below to see their documentation.
 \describe{
   \item{dplyr}{\code{\link[dplyr:reexports]{\%>\%}}}
 
-  \item{readr}{\code{\link[readr:read_fwf]{fwf_widths}}}
+  \item{readr}{\code{\link[readr]{read_fwf}}}
 }}
 

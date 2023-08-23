@@ -18,3 +18,4 @@ Imports:
 	purrr,
 	dplyr,
 	stringr
+Maintainer: Jungsoo Lee <jslfree080@gmail.com>

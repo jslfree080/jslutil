@@ -27,6 +27,7 @@ saveRDSforplotread <- function(rdsdir, os = "macOS") {
 #' @return preperation for plotreading test
 #' @export
 prepareRDSforplotread <- function(rdsdir, os = "macOS") {
+  osmark <- ifelse(os == "macOS", "/", "\\")
   ess_plotread_validation_input <- readRDS(file.path(rdsdir, "ess_plotread_validation_input.rds", fsep = osmark))
   plotread_txt <- names(ess_plotread_validation_input)
   sample_vector <- map(names(ess_plotread_validation_input), ~ strsplit(., "[_]")[[1]][4]) %>% unlist()

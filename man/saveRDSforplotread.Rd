@@ -4,11 +4,9 @@
 \alias{saveRDSforplotread}
 \title{Load a matrix from a file}
 \usage{
-saveRDSforplotread(txtdir, rdsdir, os = "macOS")
+saveRDSforplotread(rdsdir, os = "macOS")
 }
 \arguments{
-\item{txtdir}{path to the input text file}
-
 \item{rdsdir}{path to the output rds file}
 }
 \value{

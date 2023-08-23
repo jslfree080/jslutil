@@ -30,13 +30,13 @@ prepareRDSforplotread <- function(rdsdir, os = "macOS") {
   osmark <- ifelse(os == "macOS", "/", "\\")
   ess_plotread_validation_input <- readRDS(file.path(rdsdir, "ess_plotread_validation_input.rds", fsep = osmark))
   plotread_txt <- names(ess_plotread_validation_input)
-  sample_vector <- map(names(ess_plotread_validation_input), ~ strsplit(., "[_]")[[1]][4]) %>% unlist()
-  ess_plotread_validation_input <- map(seq_along(sample_vector), ~ ess_plotread_validation_input[[.]] %>% as.data.frame())
+  sample_vector <- purrr::map(names(ess_plotread_validation_input), ~ strsplit(., "[_]")[[1]][4]) %>% unlist()
+  ess_plotread_validation_input <- purrr::map(seq_along(sample_vector), ~ ess_plotread_validation_input[[.]] %>% as.data.frame())
   normal_index <- grep("N", sample_vector); normal_index <- c(normal_index, grep("neg", sample_vector))
   tumor_index <- seq_along(sample_vector)[!seq_along(sample_vector) %in% normal_index]
-  normal_ref <- map( normal_index, ~ as.vector(as.vector(ess_plotread_validation_input[[.]][-c(1:3),1])==as.character(ess_plotread_validation_input[[.]][2,1])) %>% discard(., is.na) %>% mean() ) %>% unlist()
+  normal_ref <- purrr::map( normal_index, ~ as.vector(as.vector(ess_plotread_validation_input[[.]][-c(1:3),1])==as.character(ess_plotread_validation_input[[.]][2,1])) %>% discard(., is.na) %>% mean() ) %>% unlist()
   plotread_txt[normal_index][order(normal_ref)] %>% head(); normal_ref[order(normal_ref)] %>% head()
-  tumor_alt <- map( tumor_index, ~ as.vector(as.vector(ess_plotread_validation_input[[.]][-c(1:3),1])!=as.character(ess_plotread_validation_input[[.]][2,1])) %>% discard(., is.na) %>% mean() ) %>% unlist()
-  tumor_alt_position <- map(plotread_txt[tumor_index][order(tumor_alt)], ~ strsplit(., "[_]")[[1]][3]) %>% unlist()
+  tumor_alt <- purrr::map( tumor_index, ~ as.vector(as.vector(ess_plotread_validation_input[[.]][-c(1:3),1])!=as.character(ess_plotread_validation_input[[.]][2,1])) %>% discard(., is.na) %>% mean() ) %>% unlist()
+  tumor_alt_position <- purrr::map(plotread_txt[tumor_index][order(tumor_alt)], ~ strsplit(., "[_]")[[1]][3]) %>% unlist()
   tumor_alt_position
 }

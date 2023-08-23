@@ -12,6 +12,4 @@ readr::read_fwf
 #' @export
 readr::fwf_widths
 
-#' @importFrom magrittr %>%
-#' @export
-magrittr::`%>%`
+usethis::use_pipe()

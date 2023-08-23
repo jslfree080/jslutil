@@ -3,5 +3,5 @@
 export("%>%")
 export(fwf_widths)
 export(saveRDSforplotread)
-importFrom(magrittr,"%>%")
+importFrom(dplyr,"%>%")
 importFrom(readr,"%>%")

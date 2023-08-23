@@ -10,8 +10,7 @@
 #' @export
 saveRDSforplotread <- function(rdsdir, os = "macOS"){
   plotread_txt <- Sys.glob("*.txt")
-  ess_plotread_validation_prev <- purrr::map(seq_along(plotread_txt), ~ readr::read_fwf(plotread_txt[.], col_positions = readr::fwf_widths(rep(1, 90))))
-  ess_plotread_validation_input <- ess_plotread_validation_prev[,which(ess_plotread_validation_prev[3,] == "*")]
+  ess_plotread_validation_input <- purrr::map(seq_along(plotread_txt), ~ readr::read_fwf(plotread_txt[.], col_positions = readr::fwf_widths(rep(1, 90))) %>% .[,which(.[3,] == "*")])
   names(ess_plotread_validation_input) <- plotread_txt
   osmark <- ifelse(os == "macOS", "/", "\\")
   saveRDS(ess_plotread_validation_input, file = file.path(rdsdir, "ess_plotread_validation_input.rds", fsep = osmark))

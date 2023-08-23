@@ -2,6 +2,7 @@
 
 export("%>%")
 export(fwf_widths)
+export(prepareRDSforplotread)
 export(read_fwf)
 export(saveRDSforplotread)
 importFrom(magrittr,"%>%")
